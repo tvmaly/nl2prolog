@@ -1,0 +1,26 @@
+# Local project notes and company documentation
+/context-cache/
+
+# Local configuration and Python environments
+.env
+.env.*
+!.env.example
+!.env.template
+.venv/
+
+# Python caches and build outputs
+__pycache__/
+*.pyc
+.pytest_cache/
+*.egg-info/
+/build/
+/dist/
+
+# Vim swap files and macOS metadata
+*.swp
+*.swo
+.DS_Store
+
+# Outputs from the README examples
+/out.json
+/out.pl

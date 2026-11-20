@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools>=77.0.3"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "nl2prolog"
+version = "0.1.0"
+description = "Translate English into first-order logic and Prolog terms."
+readme = "README.md"
+requires-python = ">=3.10"
+license = "MIT"
+license-files = ["LICENSE", "LICENSE.txt"]
+dependencies = ["pydantic>=2", "python-dotenv", "openai>=2,<3"]
+
+[project.optional-dependencies]
+openrouter = ["openrouter"]
+ollama = ["ollama"]
+test = ["pytest"]
+
+[project.scripts]
+nl2prolog = "nl2prolog:main"
+
+[tool.setuptools]
+py-modules = ["ast_rl", "chat_completions", "nl2prolog", "pipeline", "prolog_emitter", "structured_output", "variable_binding"]
+
+[tool.setuptools.data-files]
+"share/nl2prolog" = ["fol_json.pl"]
+
+[tool.pytest.ini_options]
+markers = ["live: calls the configured Chat Completions provider (requires --run-live)"]
